@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #1a1a1a; /* Cambié el color de fondo a un tono más oscuro */
+    overflow: hidden;
+    color: #fff; /* Cambié el color del texto a blanco */
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 80px;
+    margin-top: 170px; /* Reduje el margen superior aún más */
+}
+
+h1 {
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+span {
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)); /* Cambié el color de la sombra a rojo */
+    animation: fadeInOut 1s linear infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20%, 80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(HEART.png);
+    background-size: cover;
+    animation: moveShape 5s linear infinite;
+}
+
+@keyframes moveShape {
+    0% {
+        transform: translate(0) rotate(0deg);
+    }
+    100% {
+        transform: translate(300px) rotate(360deg);
+    }
+}
